@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Day3">
+      <UniqueIdentifier>{5a05f9ee-738a-4937-aa73-a3220bec7c67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Done">
+      <UniqueIdentifier>{7efc5a0f-e6f8-4932-8d07-7fc0b6cf9293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Done\Day2">
+      <UniqueIdentifier>{8eb13795-f1e9-405a-8909-38b3c85e311b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Done\Day1">
+      <UniqueIdentifier>{2ba5cbfa-2296-4f9a-857e-eed2bbd2b01e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Done">
+      <UniqueIdentifier>{1a35543f-61dd-4483-8594-85b9bb856207}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Runner.cpp" />
+    <ClCompile Include="DayOne.cpp">
+      <Filter>Done\Day1</Filter>
+    </ClCompile>
+    <ClCompile Include="DayTwo.cpp">
+      <Filter>Done\Day2</Filter>
+    </ClCompile>
+    <ClCompile Include="DayThree.cpp">
+      <Filter>Day3</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DayThree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DayOne.h">
+      <Filter>Header Files\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="DayTwo.h">
+      <Filter>Header Files\Done</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DayOneInput.dat">
+      <Filter>Done\Day1</Filter>
+    </None>
+    <None Include="DayTwoInput.dat">
+      <Filter>Done\Day2</Filter>
+    </None>
+    <None Include="DayThreeTestInput.dat">
+      <Filter>Day3</Filter>
+    </None>
+    <None Include="DayThreeInput.dat">
+      <Filter>Day3</Filter>
+    </None>
+  </ItemGroup>
+</Project>
