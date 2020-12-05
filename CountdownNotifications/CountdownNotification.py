@@ -57,7 +57,7 @@ while(True):
     #testServer.minutes -= 1
     ##### END DEBUG STUFF #####
     
-    time.sleep(10)
+    time.sleep(180)
     # Please be careful with automated requests; I'm not a massive company, and I can
     # only take so much traffic.  Please be considerate so that everyone gets to play.
     # - Eric Wastle
