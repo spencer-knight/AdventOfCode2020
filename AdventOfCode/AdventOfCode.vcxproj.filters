@@ -23,8 +23,11 @@
     <Filter Include="Done\Day4">
       <UniqueIdentifier>{6f7e572f-afae-409a-b157-5dc6f036ba4f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Day5">
+    <Filter Include="Done\Day5">
       <UniqueIdentifier>{94d0cc34-70ca-4730-9a93-6c0408ebc91e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Done\Day6">
+      <UniqueIdentifier>{3f5017ce-6474-4b00-a4a4-a4e34910d79d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,7 +45,10 @@
       <Filter>Done\Day4</Filter>
     </ClCompile>
     <ClCompile Include="DayFive.cpp">
-      <Filter>Day5</Filter>
+      <Filter>Done\Day5</Filter>
+    </ClCompile>
+    <ClCompile Include="DaySix.cpp">
+      <Filter>Done\Day6</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,7 +65,10 @@
       <Filter>Header Files\Done</Filter>
     </ClInclude>
     <ClInclude Include="DayFive.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="DaySix.h">
+      <Filter>Header Files\Done</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +94,13 @@
       <Filter>Done\Day4</Filter>
     </None>
     <None Include="DayFiveInput.dat">
-      <Filter>Day5</Filter>
+      <Filter>Done\Day5</Filter>
+    </None>
+    <None Include="DaySixTestInput.dat">
+      <Filter>Done\Day6</Filter>
+    </None>
+    <None Include="DaySixInput.dat">
+      <Filter>Done\Day6</Filter>
     </None>
   </ItemGroup>
 </Project>
