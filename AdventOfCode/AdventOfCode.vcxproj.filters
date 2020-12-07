@@ -29,6 +29,9 @@
     <Filter Include="Done\Day6">
       <UniqueIdentifier>{3f5017ce-6474-4b00-a4a4-a4e34910d79d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Done\Day7">
+      <UniqueIdentifier>{ac245ee8-99f0-40a9-9c28-e285b8261d66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Runner.cpp" />
@@ -50,6 +53,9 @@
     <ClCompile Include="DaySix.cpp">
       <Filter>Done\Day6</Filter>
     </ClCompile>
+    <ClCompile Include="DaySeven.cpp">
+      <Filter>Done\Day7</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DayOne.h">
@@ -68,6 +74,9 @@
       <Filter>Header Files\Done</Filter>
     </ClInclude>
     <ClInclude Include="DaySix.h">
+      <Filter>Header Files\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="DaySeven.h">
       <Filter>Header Files\Done</Filter>
     </ClInclude>
   </ItemGroup>
@@ -101,6 +110,15 @@
     </None>
     <None Include="DaySixInput.dat">
       <Filter>Done\Day6</Filter>
+    </None>
+    <None Include="DaySevenInput.dat">
+      <Filter>Done\Day7</Filter>
+    </None>
+    <None Include="DaySevenTestInput.dat">
+      <Filter>Done\Day7</Filter>
+    </None>
+    <None Include="DaySevenTestInput2.dat">
+      <Filter>Done\Day7</Filter>
     </None>
   </ItemGroup>
 </Project>
