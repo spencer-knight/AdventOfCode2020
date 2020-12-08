@@ -40,6 +40,7 @@
     <ClInclude Include="DayTwo.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DayEightInput.dat" />
     <None Include="DayFiveInput.dat" />
     <None Include="DayFourInput.dat" />
     <None Include="DayFourInput2.dat" />

@@ -17,19 +17,69 @@ struct instruction{
 	std::vector<int> params;
 	int count = 0;
 };
+void memDump(std::vector<instruction> mem) {
 
-int dayEight() {
+	for (int i = 0; i < mem.size(); i++) {
 
-	std::fstream file("DayEightInput.dat");
+		printf("%d: %s ", i, mem[i].instr.c_str());
+
+		for (int j = 0; j < mem[i].params.size(); j++) {
+
+			printf("%d ", mem[i].params[j]);
+		}
+		printf("\n");
+	}
+}
+void executeInstruction(int &pc, std::vector<instruction> &mem) {
+
+	mem[pc].count++;
+	if (mem[pc].instr == "jmp") {
+
+		pc += mem[pc].params[0];
+	}
+	else if (mem[pc].instr == "acc") {
+
+		accumulator += mem[pc].params[0];
+		pc++;
+	}
+	else if (mem[pc].instr == "nop") {
+
+		pc++;
+	}
+}
+bool runProgram(std::vector<instruction> mem) {
+
+	int pc = 0;
+	accumulator = 0;
+	for (int i = 0; i < mem.size(); i++) {
+
+		mem[i].count = 0;
+	}
+	while (pc < mem.size()) {
+
+		if (mem[pc].count > 1) {
+
+			//probably need to remove this later
+			//printf("Infinite loop\n");
+			return false;
+		}
+		executeInstruction(pc, mem);
+	}
+
+	return true;
+}
+std::vector<instruction> loadMemory(std::string fName) {
+
+	std::fstream file(fName);
 	std::string line;
-	std::vector<instruction> instrs;
+	std::vector<instruction> memory;
 
 	for (int i = 0; std::getline(file, line); i++) {
 
 		std::regex rgx("^[A-z]{1,3}");
 		std::smatch sm;
 		std::regex_search(line, sm, rgx);
-		
+
 		instruction iLine;
 		iLine.instr = sm.str();
 
@@ -40,45 +90,38 @@ int dayEight() {
 		int j;
 		ss >> j;
 		iLine.params.push_back(j);
-		instrs.push_back(iLine);
+		memory.push_back(iLine);
 		//printf("%s %d\n", iLine.instr.c_str(), iLine.params[0]);
 	}
 
-	for (int j = 0; j < instrs.size(); j++) {
-		std::string temp = instrs[j].instr;
-		instrs[j].instr = "nop";
-		for (int i = 0; i < instrs.size(); i++) {
+	return memory;
+}
+int part2(std::vector<instruction> mem) {
 
-			printf("%s %d\n", instrs[i].instr.c_str(), instrs[i].params[0]);
-			instrs[i].count = 0;
-		}
-		printf("\n");
-		accumulator = 0;
+	for (int j = 0; j < mem.size(); j++) {
+
+		std::string temp = mem[j].instr;
+		mem[j].instr = "nop";
 		
-		for (int i = 0; i < instrs.size(); i++) {
+		if (runProgram(mem)) {
 
-			if (instrs[i].count == 1) {
-
-				break;
-			}
-			instrs[i].count++;
-			if (instrs[i].instr == "jmp") {
-
-				i += instrs[i].params[0] - 1;
-			}
-			else if (instrs[i].instr == "acc") {
-
-				printf("Accumulator += %d", instrs[i].params[0]);
-				accumulator += instrs[i].params[0];
-			} 
-			
-
-			if (i + 1 >= instrs.size()) {
-
-				return accumulator;
-			}
+			mem[j].instr = temp;
+			return accumulator;
 		}
-		instrs[j].instr = temp;
+		mem[j].instr = temp;
+		
 	}
+
 	return 0;
+}
+int dayEight() {
+
+	
+	std::vector<instruction> memory = loadMemory("DayEightInput.dat");
+	//memDump(memory);
+	//runProgram(memory);
+	//int out = accumulator;
+	//for part one you would just run the un altered memory.
+	int out = part2(memory);
+	return out;
 }

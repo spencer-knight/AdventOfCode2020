@@ -124,5 +124,6 @@
     <None Include="DaySevenTestInput2.dat">
       <Filter>Done\Day7</Filter>
     </None>
+    <None Include="DayEightInput.dat" />
   </ItemGroup>
 </Project>
