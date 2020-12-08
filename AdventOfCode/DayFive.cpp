@@ -80,6 +80,7 @@ int dayFive() {
 	while (std::getline(file, line)) {
 
 		removeID(getID(line), seats);
+		highest = std::max(highest, getID(line));
 		//printf("Removing ID: %d\n", getID(line));
 	}
 	for (int i = 0; i < seats.size(); i++) {
@@ -89,5 +90,5 @@ int dayFive() {
 
 	//I kinda fucked up the code, but by looking at the output I was able to figure out which ID was my seat. 
 	//It was only partially luck.... I think.
-	return 0;
+	return highest;
 }
