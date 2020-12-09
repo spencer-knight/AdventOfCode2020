@@ -22,6 +22,7 @@
     <ClCompile Include="DayEight.cpp" />
     <ClCompile Include="DayFive.cpp" />
     <ClCompile Include="DayFour.cpp" />
+    <ClCompile Include="DayNine.cpp" />
     <ClCompile Include="DayOne.cpp" />
     <ClCompile Include="DaySeven.cpp" />
     <ClCompile Include="DaySix.cpp" />
@@ -33,6 +34,7 @@
     <ClInclude Include="DayEight.h" />
     <ClInclude Include="DayFive.h" />
     <ClInclude Include="DayFour.h" />
+    <ClInclude Include="DayNine.h" />
     <ClInclude Include="DayOne.h" />
     <ClInclude Include="DaySeven.h" />
     <ClInclude Include="DaySix.h" />
@@ -45,6 +47,7 @@
     <None Include="DayFourInput.dat" />
     <None Include="DayFourInput2.dat" />
     <None Include="DayFourTestInput.dat" />
+    <None Include="DayNineInput.dat" />
     <None Include="DayOneInput.dat" />
     <None Include="DaySevenInput.dat" />
     <None Include="DaySevenTestInput.dat" />
