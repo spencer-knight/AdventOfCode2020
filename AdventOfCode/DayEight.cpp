@@ -6,17 +6,29 @@
 #include "DayEight.h"
 #include <sstream>
 
-/*
-GLOBALS/REGISTERS
-*/
+//Program exit flags
+struct flagList {
 
-int accumulator;
+	bool infiniteLoop = false;
+	bool programFinished = false;
+};
+
+//Things like the pc and the accumulator
+struct registers {
+
+	int accumulator = 0;
+	int pc = 0;
+};
+
+//Structure of, well, instruction
 struct instruction{
 
 	std::string instr;
 	std::vector<int> params;
 	int count = 0;
 };
+
+//prints the memory
 void memDump(std::vector<instruction> mem) {
 
 	for (int i = 0; i < mem.size(); i++) {
@@ -30,44 +42,60 @@ void memDump(std::vector<instruction> mem) {
 		printf("\n");
 	}
 }
-void executeInstruction(int &pc, std::vector<instruction> &mem) {
 
-	mem[pc].count++;
-	if (mem[pc].instr == "jmp") {
+//executes Instuction, obviously
+void executeInstruction(std::vector<instruction> &mem, registers &reg) {
 
-		pc += mem[pc].params[0];
+	//printf("Accumulator: %d\npc: %d\nInstruction: %s %d\n\n", reg.accumulator, reg.pc, mem[reg.pc].instr.c_str(), mem[reg.pc].params[0]);
+	mem[reg.pc].count++;
+
+	//might make a dictionary with the commands that links them to a function so that all I have to do to add a new command is add 2 things to the dictionary, not much but it would be nice
+	if (mem[reg.pc].instr == "jmp") {
+
+		reg.pc += mem[reg.pc].params[0];
 	}
-	else if (mem[pc].instr == "acc") {
+	else if (mem[reg.pc].instr == "acc") {
 
-		accumulator += mem[pc].params[0];
-		pc++;
+		reg.accumulator += mem[reg.pc].params[0];
+		reg.pc++;
 	}
-	else if (mem[pc].instr == "nop") {
+	else if (mem[reg.pc].instr == "nop") {
 
-		pc++;
+		reg.pc++;
+	}
+	else {
+
+		printf("Unknown command: %s. ignoring.", mem[reg.pc].instr.c_str());
+		reg.pc++;
 	}
 }
-bool runProgram(std::vector<instruction> mem) {
 
-	int pc = 0;
-	accumulator = 0;
+//Takes memory and reference to registers to run the program, returns a flagList 
+flagList runProgram(std::vector<instruction> mem, registers &reg) {
+
 	for (int i = 0; i < mem.size(); i++) {
 
 		mem[i].count = 0;
 	}
-	while (pc < mem.size()) {
+	while (reg.pc < mem.size()) {
 
-		if (mem[pc].count > 1) {
+		if (mem[reg.pc].count >= 1) {
 
 			//probably need to remove this later
 			//printf("Infinite loop\n");
-			return false;
+			flagList flags;
+			flags.infiniteLoop = true;
+			return flags;
 		}
-		executeInstruction(pc, mem);
+		executeInstruction( mem, reg);
 	}
 
-	return true;
+	flagList flags;
+	flags.programFinished = true;
+	return flags;
 }
+
+//takes file input and loads program memory from that file
 std::vector<instruction> loadMemory(std::string fName) {
 
 	std::fstream file(fName);
@@ -103,10 +131,11 @@ int part2(std::vector<instruction> mem) {
 		std::string temp = mem[j].instr;
 		mem[j].instr = "nop";
 		
-		if (runProgram(mem)) {
+		registers reg;
+		if (runProgram(mem, reg).programFinished) {
 
 			mem[j].instr = temp;
-			return accumulator;
+			return reg.accumulator;
 		}
 		mem[j].instr = temp;
 		
@@ -114,14 +143,23 @@ int part2(std::vector<instruction> mem) {
 
 	return 0;
 }
+int part1(std::vector<instruction> memory) {
+	
+	registers reg;
+	flagList flags = runProgram(memory, reg);
+	int out = reg.accumulator;
+
+	return out;
+}
 int dayEight() {
 
 	
 	std::vector<instruction> memory = loadMemory("DayEightInput.dat");
 	//memDump(memory);
-	//runProgram(memory);
-	//int out = accumulator;
-	//for part one you would just run the un altered memory.
+	
+	//printf("Infinite loop: %d\nExit: %d\n", flags.infiniteLoop, flags.programFinished);
 	int out = part2(memory);
+	//for part one you would just run the un altered memory.
+	//int out = part2(memory);
 	return out;
 }

@@ -32,6 +32,9 @@
     <Filter Include="Done\Day7">
       <UniqueIdentifier>{ac245ee8-99f0-40a9-9c28-e285b8261d66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Done\Day8">
+      <UniqueIdentifier>{3d7b3851-5f36-4183-b14b-6041d907a102}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Runner.cpp" />
@@ -56,7 +59,9 @@
     <ClCompile Include="DaySeven.cpp">
       <Filter>Done\Day7</Filter>
     </ClCompile>
-    <ClCompile Include="DayEight.cpp" />
+    <ClCompile Include="DayEight.cpp">
+      <Filter>Done\Day8</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DayOne.h">
@@ -81,7 +86,7 @@
       <Filter>Header Files\Done</Filter>
     </ClInclude>
     <ClInclude Include="DayEight.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Done</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +129,8 @@
     <None Include="DaySevenTestInput2.dat">
       <Filter>Done\Day7</Filter>
     </None>
-    <None Include="DayEightInput.dat" />
+    <None Include="DayEightInput.dat">
+      <Filter>Done\Day8</Filter>
+    </None>
   </ItemGroup>
 </Project>

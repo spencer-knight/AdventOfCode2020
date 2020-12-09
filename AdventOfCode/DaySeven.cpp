@@ -203,7 +203,7 @@ int daySeven1() {
 
 	return bags.size();
 }
-int containedIn(std::vector<bagRule> rules, std::string bag) {
+int containedIn(std::vector<bagRule> rules, std::string bag, int l) {
 
 	int out = 0;
 	for (int i = 0; i < rules.size(); i++) {
@@ -213,18 +213,29 @@ int containedIn(std::vector<bagRule> rules, std::string bag) {
 			//printf("%s ", bag.c_str());
 			if (rules[i].rules[0].bagType == "none") {
 
-				//printf("%s ", rules[i].rules[0].bagType.c_str());
+				//printf("|-");
+				for (int t = 0; t < l; t++) {
+
+					printf("--");
+				}
+				//printf("%s\n", rules[i].rules[0].bagType.c_str());
 				//printf("0\n");
+				
 				return 0;
 			}
 			else {
 
 				for (int j = 0; j < rules[i].rules.size(); j++) {
 
-					//printf("%s %d\n", rules[i].rules[j].bagType.c_str(), j);
+					printf("|-");
+					for (int t = 0; t < l; t++) {
+
+						printf("--");
+					}
+					//printf("%s\n", rules[i].rules[j].bagType.c_str());
 					//printf("%s ", rules[i].rules[j].bagType.c_str());
 					//printf("%d\n", rules[i].rules[j].quantity);
-					out += rules[i].rules[j].quantity + rules[i].rules[j].quantity*containedIn(rules, rules[i].rules[j].bagType);
+					out += rules[i].rules[j].quantity + rules[i].rules[j].quantity*containedIn(rules, rules[i].rules[j].bagType, l + 1);
 				}
 			}
 		}
@@ -242,7 +253,7 @@ int daySeven2() {
 		//printf("I run");
 		rules.push_back(makeBagRule(line));
 	}
-	int cnt = containedIn(rules, "shiny gold");
+	int cnt = containedIn(rules, "shiny gold", 0);
 	//printf("%d\n", cnt);
 	return cnt;
 }
