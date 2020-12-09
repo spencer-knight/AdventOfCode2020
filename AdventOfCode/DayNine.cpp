@@ -25,7 +25,7 @@ bool isInvalid(std::vector<int> &input, int pos, int preamble = 25) {
 //given an invalid position, this will return the "weakness" of the cipher, which is just an int.
 int findWeakness(std::vector<int>& cipher, int invalid, int preamble = 25) {
 
-	for (int i = preamble; i < cipher.size(); i++) {
+	for (int i = 0; i < cipher.size(); i++) {
 
 		std::vector<int> nums;
 		int sum = 0;
@@ -33,12 +33,17 @@ int findWeakness(std::vector<int>& cipher, int invalid, int preamble = 25) {
 
 			sum += cipher[j];
 			nums.push_back(cipher[j]);
-			if (sum == invalid) {
+			//printf("%d + ", cipher[j]);
+			if (sum == invalid && nums.size() > 1) {
 
+				//printf("min: %d\nmax: %d\n", *std::min_element(nums.begin(), nums.end()), *std::max_element(nums.begin(), nums.end()));
 				return *std::min_element(nums.begin(), nums.end()) + *std::max_element(nums.begin(), nums.end());
 			}
 		}
+		//printf("= %d\n", sum);
 	}
+
+	return -1;
 }
 
 //takes input and optionally preamble length and return the first invalid number position in cipher, doesn't check for any further ones. if none are found it returns -1;
@@ -109,8 +114,8 @@ int dayNine() {
 	}
 
 
-	int invalid = input[findInvalid(input)];
-	int weakness = findWeakness(input, invalid);
+	int invalid = input[findInvalid(input, 5)];
+	int weakness = findWeakness(input, invalid, 5);
 	printf("Invalid: %d\nWeakness: %d\n", invalid, weakness);
 
 	return 0;
