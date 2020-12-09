@@ -114,8 +114,8 @@ int dayNine() {
 	}
 
 
-	int invalid = input[findInvalid(input, 5)];
-	int weakness = findWeakness(input, invalid, 5);
+	int invalid = input[findInvalid(input, 25)];
+	int weakness = findWeakness(input, invalid, 25);
 	printf("Invalid: %d\nWeakness: %d\n", invalid, weakness);
 
 	return 0;
