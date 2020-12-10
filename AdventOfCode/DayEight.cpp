@@ -4,7 +4,11 @@
 #include <fstream>
 #include <vector>
 #include "DayEight.h"
+#include "ConsoleGraphics.h"
 #include <sstream>
+#include <chrono>
+#include <thread>
+#include <iomanip>
 
 //Program exit flags
 struct flagList {
@@ -151,15 +155,86 @@ int part1(std::vector<instruction> memory) {
 
 	return out;
 }
+
+
+std::string int_to_hex(int i)
+{
+	std::stringstream stream;
+	stream << "0x"
+		<< std::setfill('0') << std::setw(sizeof(int) * 2)
+		<< std::hex << i;
+	return stream.str();
+}
+//Hopefully mimics runProgram while visuializing the program
+flagList runProgramG(std::vector<instruction> mem, registers& reg) {
+
+	cgx::setAtt("bblack");
+	cgx::setAtt("fcyan");
+	cgx::cls();
+	cgx::cmd("[?25l");
+
+
+
+
+
+
+	for (int i = 0; i < mem.size(); i++) {
+
+		mem[i].count = 0;
+	}
+	while (reg.pc < mem.size()) {
+
+		if (mem[reg.pc].count >= 1) {
+
+			//probably need to remove this later
+			//printf("Infinite loop\n");
+			flagList flags;
+			flags.infiniteLoop = true;
+			return flags;
+		}
+		executeInstruction(mem, reg);
+		
+
+
+
+
+
+
+
+
+		for (int i = 0; i < mem.size(); i++) {
+			std::string outS = mem[i].instr;
+			cgx::print(((i % 16) + 1) * 4, (i / 16) + 1, outS);
+		}
+		cgx::cmd("[?25h");
+		cgx::move(((reg.pc % 16) + 1) * 4, (reg.pc / 16));
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		cgx::cmd("[?25l");
+
+
+
+
+
+
+	}
+
+	flagList flags;
+	flags.programFinished = true;
+	return flags;
+}
+
+
 int dayEight() {
 
 	
 	std::vector<instruction> memory = loadMemory("DayEightInput.dat");
 	//memDump(memory);
 	
+	registers reg;
+	runProgramG(memory, reg);
 	//printf("Infinite loop: %d\nExit: %d\n", flags.infiniteLoop, flags.programFinished);
-	int out = part2(memory);
+	//int out = part2(memory);
 	//for part one you would just run the un altered memory.
 	//int out = part2(memory);
-	return out;
+	return 0;
 }

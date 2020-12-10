@@ -32,11 +32,14 @@
     <Filter Include="Done\Day7">
       <UniqueIdentifier>{ac245ee8-99f0-40a9-9c28-e285b8261d66}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Day9">
-      <UniqueIdentifier>{bb69273e-c4f1-4404-bf10-f158a7d0ee2c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Done\Day8">
       <UniqueIdentifier>{0f4733a8-e5a1-41be-8660-668d9fb88017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Done\Day9">
+      <UniqueIdentifier>{bb69273e-c4f1-4404-bf10-f158a7d0ee2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Day10">
+      <UniqueIdentifier>{2e0155de-f8f3-45a4-980c-4b28c8b2292d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,7 +69,10 @@
       <Filter>Done\Day8</Filter>
     </ClCompile>
     <ClCompile Include="DayNine.cpp">
-      <Filter>Day9</Filter>
+      <Filter>Done\Day9</Filter>
+    </ClCompile>
+    <ClCompile Include="DayTen.cpp">
+      <Filter>Day10</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,8 +100,14 @@
     <ClInclude Include="DayEight.h">
       <Filter>Header Files\Done</Filter>
     </ClInclude>
-    <ClInclude Include="DayNine.h">
+    <ClInclude Include="DayTen.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleGraphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DayNine.h">
+      <Filter>Header Files\Done</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -142,7 +154,11 @@
       <Filter>Done\Day8</Filter>
     </None>
     <None Include="DayNineInput.dat">
-      <Filter>Day9</Filter>
+      <Filter>Done\Day9</Filter>
+    </None>
+    <None Include="DayX.cpp.template" />
+    <None Include="DayTenInput.dat">
+      <Filter>Day10</Filter>
     </None>
   </ItemGroup>
 </Project>

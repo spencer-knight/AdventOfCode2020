@@ -26,11 +26,13 @@
     <ClCompile Include="DayOne.cpp" />
     <ClCompile Include="DaySeven.cpp" />
     <ClCompile Include="DaySix.cpp" />
+    <ClCompile Include="DayTen.cpp" />
     <ClCompile Include="DayThree.cpp" />
     <ClCompile Include="DayTwo.cpp" />
     <ClCompile Include="Runner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleGraphics.h" />
     <ClInclude Include="DayEight.h" />
     <ClInclude Include="DayFive.h" />
     <ClInclude Include="DayFour.h" />
@@ -38,6 +40,7 @@
     <ClInclude Include="DayOne.h" />
     <ClInclude Include="DaySeven.h" />
     <ClInclude Include="DaySix.h" />
+    <ClInclude Include="DayTen.h" />
     <ClInclude Include="DayThree.h" />
     <ClInclude Include="DayTwo.h" />
   </ItemGroup>
@@ -54,9 +57,11 @@
     <None Include="DaySevenTestInput2.dat" />
     <None Include="DaySixInput.dat" />
     <None Include="DaySixTestInput.dat" />
+    <None Include="DayTenInput.dat" />
     <None Include="DayThreeInput.dat" />
     <None Include="DayThreeTestInput.dat" />
     <None Include="DayTwoInput.dat" />
+    <None Include="DayX.cpp.template" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

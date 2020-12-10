@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <fstream>
+#include <vector>
+#include <sstream>
+#include <cmath>
+#include "DayX.h"
+
+int dayX() {
+
+	std::fstream file("DayXInput.dat");
+	std::string line;
+	while (std::getline(file, line)) {
+
+		//printf("%s\n", line);
+		// Put parsing shit here
+
+	}
+
+	return 0;
+}
