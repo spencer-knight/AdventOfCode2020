@@ -5,6 +5,8 @@
 #include <vector>
 #include <sstream>
 #include <cmath>
+#include <unordered_map>
+#include <inttypes.h>
 #include "DayX.h"
 
 int dayX() {
