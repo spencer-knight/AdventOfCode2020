@@ -12,5 +12,5 @@
 
 int main() {
 
-	printf("\n\n\n###############\nOutput: %d\n###############\n", dayEight());
+	printf("\n\n\n###############\nOutput: %d\n###############\n", dayTen());
 }
