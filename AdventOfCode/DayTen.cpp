@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <algorithm>
 #include <fstream>
@@ -7,6 +7,7 @@
 #include <cmath>
 #include <unordered_map>
 #include <inttypes.h>
+#include <chrono>
 #include "DayTen.h"
 
 int find(std::vector<int> in, int toFind) {
@@ -29,7 +30,7 @@ int dayTen1(std::vector<int> input) {
 	for (int i = 1; i <= 3; i++) {
 
 		int fnd = find(input, current + i);
-		printf("%d, %d\n", input.size(), fnd);
+		//printf("%d, %d\n", input.size(), fnd);
 		if (fnd == -1) {
 
 			//nothing
@@ -38,14 +39,14 @@ int dayTen1(std::vector<int> input) {
 
 			threes++;
 			i = 0;
-			printf("%d, %d\n", input.size(), fnd);
+			//printf("%d, %d\n", input.size(), fnd);
 			current = input[fnd];
 		}
 		else if (input[fnd] - current == 1) {
 
 			ones++;
 			i = 0;
-			printf("%d, %d\n", input.size(), fnd);
+			//printf("%d, %d\n", input.size(), fnd);
 			current = input[fnd];
 			//printf("What");
 		}
@@ -61,7 +62,7 @@ int dayTen1(std::vector<int> input) {
 
 
 
-	return (threes + 1) * ones;
+	return (threes + 1)* ones;
 }
 
 //store the results of previous computations. TIL that what I implemented was memoization, AoC really be teaching me.
@@ -96,6 +97,34 @@ uint64_t recurSolve(std::vector<int> input, int current, int depth) {
 
 	return sum;
 }
+
+uint64_t recurSolveNoMem(std::vector<int> input, int current, int depth) {
+
+	uint64_t sum = 0;
+	//std::printf("%d\n", *std::max_element(input.begin(), input.end()));
+
+	for (int i = 1; i <= 3; i++) {
+
+		int ret = find(input, input[current] + i);
+		if (ret != -1 && input[ret] == *std::max_element(input.begin(), input.end())) {
+
+			sum += 1;
+		}
+		if (ret != -1) {
+
+			uint64_t recurSov = 0;
+			recurSov = recurSolveNoMem(input, ret, depth + 1);
+			sum += recurSov;
+		}
+	}
+
+	return sum;
+}
+
+//bool func(int a, int b) {
+//
+//	return a < b;
+//}
 int dayTen() {
 
 	// Read input line by line.
@@ -109,16 +138,34 @@ int dayTen() {
 		std::stringstream ss(line);
 		int outt;
 		ss >> outt;
-		//printf("%d\n", outt);
 		input.push_back(outt);
 	}
 
-	printf("long: %d\t uint64_t: %d\n", sizeof(long), sizeof(uint64_t));
+	//printf("long: %d\t uint64_t: %d\n", sizeof(long), sizeof(uint64_t));
 	uint64_t outt;
-	printf("Part 1: %d\n", dayTen1(input));
+	printf("Part 1: %d\n\n", dayTen1(input));
 	input.push_back(0);
+	auto start = std::chrono::high_resolution_clock::now();
 	outt = recurSolve(input, input.size() - 1, 0);
-	
-	printf("Part 2: %" PRIu64 "\n", outt);
+	auto end = std::chrono::high_resolution_clock::now();
+	long long duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+	printf("Part 2(Efficient way): %" PRIu64 "\nTime(microseconds): %lld\n\n", outt, duration);
+	//std::cin.get();
+
+	//Lol i tried to run it to see how long it would take, then I did the math and realized that the universe would be dead before it finished. 
+	/*auto start2 = std::chrono::high_resolution_clock::now();
+	uint64_t outtt = recurSolveNoMem(input, input.size() - 1, 0);
+	auto end2 = std::chrono::high_resolution_clock::now();
+	long long duration2 = std::chrono::duration_cast<std::chrono::seconds>(end2 - start2).count();
+	printf("Part 2(Inefficient way): %" PRIu64 "\nTime(seconds): %lld\n", outtt, duration2);
+	long long duration2s = std::chrono::duration_cast<std::chrono::microseconds>(end2 - start2).count();
+	printf("Time(microseconds): %lld\n", duration2s);*/
+
+
+	/*std::sort(input.begin(), input.end(), func);
+	for (int i = 0; i < input.size(); i++) {
+
+		printf("%d\n", input[i]);
+	}*/
 	return 0;
 }
