@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Advent of Code 2020 Day 10 Part 2 Calculation Time}
+\author{Spencerk226}
+\date{December 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Solving With Pure Recursion}
+\quad The maximum number of calculations for all combinations of a set of adapters n adapters long when using pure recursion can be represented by 
+\begin{equation*}
+    f(n) = \sum_{i = 0}^n 3^i
+\end{equation*}
+\quad One computation is not necessarily one clock cycle but to make it easy I will assume that it is.
+With my input the set was 104 adapters long, so the number of calculations equates to approximately $6.26*10^{49}$ calculations. 
+\newline
+\newline
+\quad With my processor running a 4GHz we can calculate the time in years it will take to finish processing as:
+\begin{equation*}
+    \frac{1\,ns}{4\,computations} * \frac{6.26*10^{49}\,computations}{1} * \frac{1\, s}{1*10^9\,ns} * \frac{1\,yr}{3.15*10^7\,s}
+\end{equation*}
+which equates to $4.98*10^{32}$ years, this is put into perspective when you note that the universe is approximated to be $1.38*10^{10}$ years old.
+\newline
+\newline
+\quad I think it is safe to say that if you are doing this with straight up recursion you won't finish today's challenge before the 25th.
+\section{Solving with Recursion Using Memoization}
+When using memoization the number of calculations can be represented by approximately
+\begin{equation*}
+    f(n) = \sum_{i = 0}^n n + 1
+\end{equation*}
+Which would be 105 calculations for me, which can be done in a few nanoseconds, in reality it took about 3000 microseconds.
+\end{document}
