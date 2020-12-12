@@ -9,9 +9,10 @@
 #include "DayNine.h"
 #include "DayTen.h"
 #include "DayEleven.h"
+#include "DayTwelve.h"
 #include <iostream>
 
 int main() {
 
-	printf("\n\n\n###############\nOutput: %d\n###############\n", dayEleven());
+	printf("\n\n\n###############\nOutput: %d\n###############\n", dayTwelve());
 }

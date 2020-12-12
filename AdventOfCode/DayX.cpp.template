@@ -15,7 +15,7 @@ int dayX() {
 	std::string line;
 	while (std::getline(file, line)) {
 
-		//printf("%s\n", line);
+		//printf("%s\n", line.c_str());
 		// Put parsing shit here
 
 	}
