@@ -201,10 +201,10 @@ int dayTwelve() {
 		dirs.push_back(p);
 	}
 	for (int i = 0; i < dirs.size(); i++) {
-
+		
 		//printf("%c %d\n", dirs[i].first, dirs[i].second);
 	}
-	
+		
 	int out = dayTwelve1(dirs );
 
 

@@ -81,6 +81,7 @@
       <Filter>Done\Day11</Filter>
     </ClCompile>
     <ClCompile Include="DayTwelve.cpp" />
+    <ClCompile Include="DayThirteen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DayOne.h">
@@ -120,6 +121,9 @@
       <Filter>Header Files\Done</Filter>
     </ClInclude>
     <ClInclude Include="DayTwelve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DayThirteen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -177,5 +181,7 @@
       <Filter>Done\Day11</Filter>
     </None>
     <None Include="DayTwelveInput.dat" />
+    <None Include="..\README.md" />
+    <None Include="DayThirteenInput.dat" />
   </ItemGroup>
 </Project>
