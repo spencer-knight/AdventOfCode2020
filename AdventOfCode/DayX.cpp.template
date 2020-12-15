@@ -7,6 +7,7 @@
 #include <cmath>
 #include <unordered_map>
 #include <inttypes.h>
+#include <regex>
 #include "DayX.h"
 
 int dayX() {

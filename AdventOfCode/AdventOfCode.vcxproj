@@ -23,6 +23,7 @@
     <ClCompile Include="DayEleven.cpp" />
     <ClCompile Include="DayFive.cpp" />
     <ClCompile Include="DayFour.cpp" />
+    <ClCompile Include="DayFourteen.cpp" />
     <ClCompile Include="DayNine.cpp" />
     <ClCompile Include="DayOne.cpp" />
     <ClCompile Include="DaySeven.cpp" />
@@ -33,6 +34,7 @@
     <ClCompile Include="DayTwelve.cpp" />
     <ClCompile Include="DayTwo.cpp" />
     <ClCompile Include="Runner.cpp" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleGraphics.h" />
@@ -40,6 +42,7 @@
     <ClInclude Include="DayEleven.h" />
     <ClInclude Include="DayFive.h" />
     <ClInclude Include="DayFour.h" />
+    <ClInclude Include="DayFourteen.h" />
     <ClInclude Include="DayNine.h" />
     <ClInclude Include="DayOne.h" />
     <ClInclude Include="DaySeven.h" />
@@ -49,6 +52,7 @@
     <ClInclude Include="DayThree.h" />
     <ClInclude Include="DayTwelve.h" />
     <ClInclude Include="DayTwo.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
@@ -57,6 +61,7 @@
     <None Include="DayFiveInput.dat" />
     <None Include="DayFourInput.dat" />
     <None Include="DayFourInput2.dat" />
+    <None Include="DayFourteenInput.dat" />
     <None Include="DayFourTestInput.dat" />
     <None Include="DayNineInput.dat" />
     <None Include="DayOneInput.dat" />
@@ -67,6 +72,7 @@
     <None Include="DaySixTestInput.dat" />
     <None Include="DayTenInput.dat" />
     <None Include="DayThirteenInput.dat" />
+    <None Include="DayThirteenTestInput.dat" />
     <None Include="DayThreeInput.dat" />
     <None Include="DayThreeTestInput.dat" />
     <None Include="DayTwelveInput.dat" />

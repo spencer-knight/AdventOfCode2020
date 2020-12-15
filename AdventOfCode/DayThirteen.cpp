@@ -10,6 +10,7 @@
 #include <inttypes.h>
 #include <regex>
 #include "DayThirteen.h"
+uint64_t si;
 
 std::vector<uint64_t> prevVal;
 std::vector<std::string> getMatches2(std::string reg, std::string str) {
@@ -85,25 +86,144 @@ int solve(std::vector<uint64_t> &buses, int pos, uint64_t prev, bool matters) {
 				else {
 
 					prevVal[pos] = i- 1;
+					
+					for (int p = 0; p < pos; p++) {
+
+						prevVal[p]++;
+					}
+					si++;
 					return 0;
 				}
 			}
 		}
 	}
 }
-int solve(std::vector<uint64_t>& buses) {
+uint64_t solve(std::vector<uint64_t>& buses) {
 
 //	printf("solve1: %d\n", buses.size());
 	uint64_t i = 1;
 	i *= 1000;
+	si = i;
 	for (; ; i++) {
 
 		//std::cout << buses[0] * i << std::endl;
-		if (solve(buses, 1, buses[0] * i, true) == 1) {
+		if (solve(buses, 1, buses[0] * si, true) == 1) {
 
-			return i * buses[0];
+			return si * buses[0];
 		}
 	}
+}
+
+struct multStruct {
+
+	uint64_t mul;
+	uint64_t base;
+	uint64_t diff;
+	uint64_t val;
+};
+//solve(...) is a terrible inneficient bruteforce method, imma implement u/dangermaximum's solution because I caved in on this problem, going through a dark place
+//Can you blame me though? I have finals.
+//So implementing the idea still requires braincells, I can have a little pride in my answer
+int stolenRec(std::vector<multStruct> ms, int pos) {
+
+	while (true) {
+
+
+	}
+	return 0;
+}
+void inc(multStruct& ms) {
+
+	ms.val += ms.mul;
+}
+int stolenRec(std::vector<multStruct> mults) {
+
+	while (true) {
+
+		//check if all vals are the same
+		bool same = true;
+		for (int i = 1; i < mults.size(); i++) {
+
+			if (mults[i].val != mults[i - 1].val) {
+
+				same = false;
+			}
+		}
+
+
+		int minPos = 0;
+		if (!same) {
+
+			uint64_t min = 0xFFFFFFFFFFFFFFFF;
+			for (int i = 0; i < mults.size(); i++) {
+
+				if (mults[i].val < min && mults[i].mul != 0) {
+
+					min = mults[i].val;
+					minPos = i;
+				}
+			}
+		}
+		else {
+
+			return mults[0].val;
+		}
+		//	std::cout << mults[0].val << std::endl;
+		if (mults[0].val > 1068781 && false) {
+
+			std::cout << "You have arrived" << std::endl;
+			for (int i = 0; i < mults.size(); i++) {
+
+				std::cout << mults[i].val << std::endl;
+			}
+			std::cin.get();
+		}
+		inc(mults[minPos]);
+	}
+	return 0;
+}
+uint64_t stolen(std::vector<uint64_t>& buses) {
+
+	std::vector<multStruct> mults;
+	for (int i = 1; i < buses.size(); i++) {
+
+		int64_t base = buses[0];
+		int64_t mult = buses[i];
+		if (buses[i] != 0) {
+			while (mult - base != i) {
+
+				if( i == 49 && mult - base < 80 && mult - base > 20)
+				std::cout << mult - base << std::endl;
+				if (base < mult - i) {
+
+					base += buses[0];
+					//	std::cout << base << std::endl;
+				}
+				else {
+
+					mult += buses[i];
+				}
+			}
+		}
+		else {
+
+			//Do nothing
+		}
+
+		std::cout << base << " * " << mult << " = ";
+		std::cout << base * mult << std::endl;
+		if (buses[i] != 0) {
+			multStruct ms;
+			ms.mul = buses[0] * buses[i];
+			ms.base = base;
+			ms.val = base;
+			ms.diff = mult - base;
+			mults.push_back(ms);
+		}
+	}
+
+	std::cout << "Starting checking" << std::endl;
+	return stolenRec(mults);
 }
 int dayThirteen() {
 
@@ -136,7 +256,7 @@ int dayThirteen() {
 	//std::cin.get();
 	std::cout << "Part1: " << d13p1(buses, earliest) << std::endl;
 	auto start2 = std::chrono::high_resolution_clock::now();
-	int out = solve(buses);
+	int out = stolen(buses);
 	auto end2 = std::chrono::high_resolution_clock::now();
 	long long duration2 = std::chrono::duration_cast<std::chrono::seconds>(end2 - start2).count();
 	long long duration3 = std::chrono::duration_cast<std::chrono::minutes>(end2 - start2).count();

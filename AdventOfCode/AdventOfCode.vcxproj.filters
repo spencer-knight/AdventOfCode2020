@@ -44,6 +44,15 @@
     <Filter Include="Done\Day11">
       <UniqueIdentifier>{5639e8e5-bf6c-4932-b725-fb910d4c9f2d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Done\Day12">
+      <UniqueIdentifier>{ae481a02-8a56-4f75-a03b-ce4070fb983e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Day13">
+      <UniqueIdentifier>{47e1b4c9-9708-4c20-893e-d0a721bdfec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Day14">
+      <UniqueIdentifier>{66399ef8-1b9f-400b-9eeb-5c7678b31625}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Runner.cpp" />
@@ -80,8 +89,16 @@
     <ClCompile Include="DayEleven.cpp">
       <Filter>Done\Day11</Filter>
     </ClCompile>
-    <ClCompile Include="DayTwelve.cpp" />
-    <ClCompile Include="DayThirteen.cpp" />
+    <ClCompile Include="DayTwelve.cpp">
+      <Filter>Done\Day12</Filter>
+    </ClCompile>
+    <ClCompile Include="DayThirteen.cpp">
+      <Filter>Day13</Filter>
+    </ClCompile>
+    <ClCompile Include="DayFourteen.cpp">
+      <Filter>Day14</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DayOne.h">
@@ -120,10 +137,16 @@
     <ClInclude Include="DayEleven.h">
       <Filter>Header Files\Done</Filter>
     </ClInclude>
-    <ClInclude Include="DayTwelve.h">
+    <ClInclude Include="DayThirteen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DayThirteen.h">
+    <ClInclude Include="DayTwelve.h">
+      <Filter>Header Files\Done</Filter>
+    </ClInclude>
+    <ClInclude Include="DayFourteen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -180,8 +203,18 @@
     <None Include="DayElevenInput.dat">
       <Filter>Done\Day11</Filter>
     </None>
-    <None Include="DayTwelveInput.dat" />
     <None Include="..\README.md" />
-    <None Include="DayThirteenInput.dat" />
+    <None Include="DayTwelveInput.dat">
+      <Filter>Done\Day12</Filter>
+    </None>
+    <None Include="DayThirteenInput.dat">
+      <Filter>Day13</Filter>
+    </None>
+    <None Include="DayThirteenTestInput.dat">
+      <Filter>Day13</Filter>
+    </None>
+    <None Include="DayFourteenInput.dat">
+      <Filter>Day14</Filter>
+    </None>
   </ItemGroup>
 </Project>
