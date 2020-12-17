@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="DayEight.cpp" />
     <ClCompile Include="DayEleven.cpp" />
+    <ClCompile Include="DayFifteen.cpp" />
     <ClCompile Include="DayFive.cpp" />
     <ClCompile Include="DayFour.cpp" />
     <ClCompile Include="DayFourteen.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="ConsoleGraphics.h" />
     <ClInclude Include="DayEight.h" />
     <ClInclude Include="DayEleven.h" />
+    <ClInclude Include="DayFifteen.h" />
     <ClInclude Include="DayFive.h" />
     <ClInclude Include="DayFour.h" />
     <ClInclude Include="DayFourteen.h" />
@@ -58,6 +60,7 @@
     <None Include="..\README.md" />
     <None Include="DayEightInput.dat" />
     <None Include="DayElevenInput.dat" />
+    <None Include="DayFifteenInput.dat" />
     <None Include="DayFiveInput.dat" />
     <None Include="DayFourInput.dat" />
     <None Include="DayFourInput2.dat" />
