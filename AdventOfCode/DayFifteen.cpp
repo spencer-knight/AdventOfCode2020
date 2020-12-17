@@ -160,6 +160,7 @@ int dayFifteen2(std::vector<int> nums) {
 		//	std::cout << last.said << std::endl;
 		}
 		//std::cout << i + 4 << ": " << last.said << std::endl;
+		//add map with just the most recent calls to a number?
 		std::sort(turns.begin(), turns.end(), less);
 	}
 

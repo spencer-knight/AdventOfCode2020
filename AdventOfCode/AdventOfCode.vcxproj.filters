@@ -56,6 +56,12 @@
     <Filter Include="Day15">
       <UniqueIdentifier>{9dde4f01-fd28-44bc-adfa-2e7e0cbf59d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Day16">
+      <UniqueIdentifier>{45e1966a-32e6-4b19-baeb-762b21f17735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Day17">
+      <UniqueIdentifier>{671c522b-d592-41fe-9090-b8592b009508}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Runner.cpp" />
@@ -104,6 +110,12 @@
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="DayFifteen.cpp">
       <Filter>Day15</Filter>
+    </ClCompile>
+    <ClCompile Include="DaySixteen.cpp">
+      <Filter>Day16</Filter>
+    </ClCompile>
+    <ClCompile Include="DaySeventeen.cpp">
+      <Filter>Day17</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +168,12 @@
       <Filter>Header Files\Done</Filter>
     </ClInclude>
     <ClInclude Include="DayFifteen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DaySixteen.h">
+      <Filter>Day16</Filter>
+    </ClInclude>
+    <ClInclude Include="DaySeventeen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -227,6 +245,12 @@
     </None>
     <None Include="DayFifteenInput.dat">
       <Filter>Day15</Filter>
+    </None>
+    <None Include="DaySixteenInput.dat">
+      <Filter>Day16</Filter>
+    </None>
+    <None Include="DaySeventeenInput.dat">
+      <Filter>Day17</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -28,7 +28,9 @@
     <ClCompile Include="DayNine.cpp" />
     <ClCompile Include="DayOne.cpp" />
     <ClCompile Include="DaySeven.cpp" />
+    <ClCompile Include="DaySeventeen.cpp" />
     <ClCompile Include="DaySix.cpp" />
+    <ClCompile Include="DaySixteen.cpp" />
     <ClCompile Include="DayTen.cpp" />
     <ClCompile Include="DayThirteen.cpp" />
     <ClCompile Include="DayThree.cpp" />
@@ -48,7 +50,9 @@
     <ClInclude Include="DayNine.h" />
     <ClInclude Include="DayOne.h" />
     <ClInclude Include="DaySeven.h" />
+    <ClInclude Include="DaySeventeen.h" />
     <ClInclude Include="DaySix.h" />
+    <ClInclude Include="DaySixteen.h" />
     <ClInclude Include="DayTen.h" />
     <ClInclude Include="DayThirteen.h" />
     <ClInclude Include="DayThree.h" />
@@ -69,9 +73,11 @@
     <None Include="DayNineInput.dat" />
     <None Include="DayOneInput.dat" />
     <None Include="DaySevenInput.dat" />
+    <None Include="DaySeventeenInput.dat" />
     <None Include="DaySevenTestInput.dat" />
     <None Include="DaySevenTestInput2.dat" />
     <None Include="DaySixInput.dat" />
+    <None Include="DaySixteenInput.dat" />
     <None Include="DaySixTestInput.dat" />
     <None Include="DayTenInput.dat" />
     <None Include="DayThirteenInput.dat" />

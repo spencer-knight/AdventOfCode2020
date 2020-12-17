@@ -13,9 +13,11 @@
 #include "DayThirteen.h"
 #include "DayFourteen.h"
 #include "DayFifteen.h"
+#include "DaySixteen.h"
+#include "DaySeventeen.h"
 #include <iostream>
 
 int main() {
 
-	printf("\n\n\n###############\nOutput: %d\n###############\n", dayFifteen());
+	printf("\n\n\n###############\nOutput: %d\n###############\n", daySeventeen());
 }
