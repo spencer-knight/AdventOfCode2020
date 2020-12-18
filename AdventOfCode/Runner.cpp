@@ -17,7 +17,8 @@
 #include "DaySeventeen.h"
 #include <iostream>
 
-int main() {
+int oldmain() {
 
-	printf("\n\n\n###############\nOutput: %d\n###############\n", daySeventeen());
+	printf("\n\n\n###############\nOutput: %d\n###############\n", dayFifteen());
+	return 0;
 }

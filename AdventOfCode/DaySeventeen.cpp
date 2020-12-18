@@ -12,7 +12,7 @@
 #define lines 8
 #define cycles 6
 
-void dispSpace(std::vector<std::vector<std::vector<std::vector<bool>>>> space) {
+void dispSpace(std::vector<std::vector<std::vector<std::vector<bool>>>> &space) {
 
 	int dimensions = lines + (cycles * 2);
 	for (int z = (dimensions - 1) / 2; z < dimensions - (dimensions - 1) / 2; z++) {
@@ -31,7 +31,7 @@ void dispSpace(std::vector<std::vector<std::vector<std::vector<bool>>>> space) {
 	}
 	std::cout << "-----------" << std::endl;
 }
-int getActive(std::vector<std::vector<std::vector<std::vector<bool>>>> space, int x, int y, int z, int w) {
+int getActive(std::vector<std::vector<std::vector<std::vector<bool>>>> &space, int x, int y, int z, int w) {
 
 	int active = 0;
 	for (int wc = std::max(w - 1, 0); wc < std::min(w + 1 + 1, (int)space.size()); wc++) {
@@ -58,7 +58,7 @@ int getActive(std::vector<std::vector<std::vector<std::vector<bool>>>> space, in
 
 	return active;
 }
-int sumActives(std::vector<std::vector<std::vector<std::vector<bool>>>> space) {
+int sumActives(std::vector<std::vector<std::vector<std::vector<bool>>>> &space) {
 
 	int sum = 0;
 	for (int w = 0; w < space.size(); w++) {

@@ -10,6 +10,7 @@
 #include <regex>
 #include "util.h"
 #include "DayFifteen.h"
+//#include "ConsoleGraphics.h"
 struct turn {
 
 	int pos;
@@ -67,7 +68,7 @@ bool less(turn a, turn b) {
 	}
 }
 //returns pos of said
-int find( int said, std::vector<turn> in, int low, int high) {
+int find( int said, std::vector<turn> &in, int low, int high) {
 
 	if (high >= low && low != in.size()) {
 
@@ -110,6 +111,7 @@ int dayFifteen2(std::vector<int> nums) {
 		turns.push_back(t);
 		last = t;
 	}
+	std::sort(turns.begin(), turns.end(), less);
 	for (int i = 0; i < 30000000 - nums.size(); i++) {
 
 		int diff;
@@ -141,7 +143,7 @@ int dayFifteen2(std::vector<int> nums) {
 		*/
 		//*std::binary_search(turns.begin(), turns.end(), last, sort);
 		//insert rather than sort find() - 1 or 0
-		int newPos = std::max(find(last.said, turns, 0, turns.size()) - 1, 0);
+		int newPos = find(last.said, turns, 0, turns.size());
 		if (found) {
 
 			//insert this into sorted array
@@ -154,14 +156,48 @@ int dayFifteen2(std::vector<int> nums) {
 		else {
 
 		//	turns.push_back(last);
-			turns.insert(turns.begin() + newPos, last);
+			//turns.insert(turns.begin() + newPos, last);
+			int poss = 0;
+			int next = last.said + 1;
+			bool found = false;
+			int findRet;
+			for (; next <= turns[turns.size() - 1].said; next++) {
+
+				if (false && last.said == 31) {
+
+					std::cout << next << std::endl;
+				}
+				findRet = find(next, turns, 0, turns.size());
+				if (findRet != -1) {
+
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+
+				poss = turns.size();
+			}
+			else {
+
+				poss = findRet;
+			}
+			turns.insert(turns.begin() + poss, last);
 			last.pos++;
 			last.said = 0;
 		//	std::cout << last.said << std::endl;
 		}
 		//std::cout << i + 4 << ": " << last.said << std::endl;
 		//add map with just the most recent calls to a number?
-		std::sort(turns.begin(), turns.end(), less);
+	//	std::sort(turns.begin(), turns.end(), less);
+		if (i % 10000 == 0) {
+
+			//cgx::cls();
+			//std::cout <<(char) 0x1B << "[2J" << std::endl;
+			//std::cout << (char)0x1B << "[H";
+			system("CLS");
+			std::cout << i << std::endl;
+		}
 	}
 
 	return last.said;

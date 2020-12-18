@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DayEight.cpp" />
+    <ClCompile Include="DayEighteen.cpp" />
     <ClCompile Include="DayEleven.cpp" />
     <ClCompile Include="DayFifteen.cpp" />
     <ClCompile Include="DayFive.cpp" />
@@ -62,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+    <None Include="DayEighteenInput.dat" />
     <None Include="DayEightInput.dat" />
     <None Include="DayElevenInput.dat" />
     <None Include="DayFifteenInput.dat" />
