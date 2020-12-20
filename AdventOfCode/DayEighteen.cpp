@@ -199,7 +199,10 @@ int dayEighteen() {
 	std::cout << "Part1: " <<  sum << std::endl;
 	return 0;
 }
-int main() {
+int main18() {
 
 	dayEighteen();
+
+
+	return 0;
 }

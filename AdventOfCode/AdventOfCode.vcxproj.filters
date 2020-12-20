@@ -65,6 +65,9 @@
     <Filter Include="Day18">
       <UniqueIdentifier>{09df2ff1-83fa-4e6f-934f-57559d02eb94}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Day19">
+      <UniqueIdentifier>{38d365d1-c2a8-4b19-9b89-33b678ae813b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Runner.cpp" />
@@ -122,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="DayEighteen.cpp">
       <Filter>Day18</Filter>
+    </ClCompile>
+    <ClCompile Include="DayNineteen.cpp">
+      <Filter>Day19</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -260,6 +266,9 @@
     </None>
     <None Include="DayEighteenInput.dat">
       <Filter>Day18</Filter>
+    </None>
+    <None Include="DayNineteenInput.dat">
+      <Filter>Day19</Filter>
     </None>
   </ItemGroup>
 </Project>

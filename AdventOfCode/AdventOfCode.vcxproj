@@ -27,6 +27,7 @@
     <ClCompile Include="DayFour.cpp" />
     <ClCompile Include="DayFourteen.cpp" />
     <ClCompile Include="DayNine.cpp" />
+    <ClCompile Include="DayNineteen.cpp" />
     <ClCompile Include="DayOne.cpp" />
     <ClCompile Include="DaySeven.cpp" />
     <ClCompile Include="DaySeventeen.cpp" />
@@ -73,6 +74,7 @@
     <None Include="DayFourteenInput.dat" />
     <None Include="DayFourTestInput.dat" />
     <None Include="DayNineInput.dat" />
+    <None Include="DayNineteenInput.dat" />
     <None Include="DayOneInput.dat" />
     <None Include="DaySevenInput.dat" />
     <None Include="DaySeventeenInput.dat" />
@@ -164,6 +166,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>16777216</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -180,6 +183,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>16777216</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -192,6 +196,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>16777216</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -208,6 +213,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>16777216</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
