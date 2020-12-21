@@ -65,8 +65,11 @@
     <Filter Include="Day18">
       <UniqueIdentifier>{09df2ff1-83fa-4e6f-934f-57559d02eb94}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Day19">
+    <Filter Include="Done\Day19">
       <UniqueIdentifier>{38d365d1-c2a8-4b19-9b89-33b678ae813b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Day20">
+      <UniqueIdentifier>{33b04d28-6121-4370-a21c-68ce2bdca4f5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +130,10 @@
       <Filter>Day18</Filter>
     </ClCompile>
     <ClCompile Include="DayNineteen.cpp">
-      <Filter>Day19</Filter>
+      <Filter>Done\Day19</Filter>
+    </ClCompile>
+    <ClCompile Include="DayTwenty.cpp">
+      <Filter>Day20</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -268,7 +274,10 @@
       <Filter>Day18</Filter>
     </None>
     <None Include="DayNineteenInput.dat">
-      <Filter>Day19</Filter>
+      <Filter>Done\Day19</Filter>
+    </None>
+    <None Include="DayTwentyInput.dat">
+      <Filter>Day20</Filter>
     </None>
   </ItemGroup>
 </Project>

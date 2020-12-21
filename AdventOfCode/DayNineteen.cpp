@@ -101,21 +101,45 @@ int dayNineteen() {
 	std::vector <std::string> rules(138, "");
 	while (std::getline(file, line)) {
 
+	//	printf("\"%s\"\n", line.c_str());
+		// Put parsing shit here
 		if (line == "") {
 
 			break;
 		}
 		int colon = util::indexOf(':', line) + 1;
 		sRules[stoi(line.substr(0, colon - 1))] = (line.substr( colon + 1));
+		rules.push_back("");
 	}
 
-	for (int i = 0; i < sRules.size(); i++) {
+	//for (int i = 0; i < sRules.size(); i++) {
 
-		std::cout << i << ": " << sRules[i] << ";" << std::endl;
+		//printf("%s\n", sRules[i].c_str());
+		makeRule(rules, sRules, 0);
+//	}
+
+	std::cout << rules[0] << std::endl;
+	int sum = 0;
+	//this will get the strings to match
+	int i = 1;
+	while (std::getline(file, line)) {
+
+		//unfortunately regex_match takes ages to finish comparing.
+		std::regex reg("^" + rules[0] + "$");
+		std::cout << int((i / 487.0f) * 10000)/100.0f << "% : " << line << std::endl;
+		if (std::regex_match(line, reg)) {
+
+			//std::cout << line << std::endl;
+			sum++;
+		}
+
+		i++;
 	}
-	return 0;
+
+	std::cout << "Part1: " << sum << std::endl;
+	return sum;
 }
-int main() {
+int main19() {
 
 	dayNineteen();
 

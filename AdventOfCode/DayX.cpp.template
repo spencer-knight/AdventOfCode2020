@@ -26,4 +26,5 @@ int dayX() {
 int main() {
 
 	dayX();
+	return 0;
 }
