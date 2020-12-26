@@ -38,6 +38,9 @@
     <ClCompile Include="DayThree.cpp" />
     <ClCompile Include="DayTwelve.cpp" />
     <ClCompile Include="DayTwenty.cpp" />
+    <ClCompile Include="DayTwentyfive.cpp" />
+    <ClCompile Include="DayTwentyone.cpp" />
+    <ClCompile Include="Daytwentytwo.cpp" />
     <ClCompile Include="DayTwo.cpp" />
     <ClCompile Include="Runner.cpp" />
     <ClCompile Include="Util.cpp" />
@@ -90,7 +93,9 @@
     <None Include="DayThreeInput.dat" />
     <None Include="DayThreeTestInput.dat" />
     <None Include="DayTwelveInput.dat" />
+    <None Include="DayTwentyfiveInput.dat" />
     <None Include="DayTwentyInput.dat" />
+    <None Include="DayTwentytwoInput.dat" />
     <None Include="DayTwoInput.dat" />
     <None Include="DayX.cpp.template" />
   </ItemGroup>

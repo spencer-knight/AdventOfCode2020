@@ -71,6 +71,9 @@
     <Filter Include="Day20">
       <UniqueIdentifier>{33b04d28-6121-4370-a21c-68ce2bdca4f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Day22">
+      <UniqueIdentifier>{0c5edce2-99a4-4645-a263-6d5de33a504e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Runner.cpp" />
@@ -135,6 +138,11 @@
     <ClCompile Include="DayTwenty.cpp">
       <Filter>Day20</Filter>
     </ClCompile>
+    <ClCompile Include="DayTwentyone.cpp" />
+    <ClCompile Include="Daytwentytwo.cpp">
+      <Filter>Day22</Filter>
+    </ClCompile>
+    <ClCompile Include="DayTwentyfive.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DayOne.h">
@@ -279,5 +287,9 @@
     <None Include="DayTwentyInput.dat">
       <Filter>Day20</Filter>
     </None>
+    <None Include="DayTwentytwoInput.dat">
+      <Filter>Day22</Filter>
+    </None>
+    <None Include="DayTwentyfiveInput.dat" />
   </ItemGroup>
 </Project>
